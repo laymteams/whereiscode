@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhereIsCode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="start-screen">
+    <div class="title">WHERE IS CODE?</div>
+    <div class="subtitle">Найди код от домофона</div>
+    <button id="btn-start">ИГРАТЬ</button>
+  </div>
+
+  <div id="game-screen" class="hidden">
+    <div id="hud">
+      <div class="hud-left">
+        <span id="level-display">Уровень 1 / 100</span>
+        <span id="found-display">Найдено: 0 / 0</span>
+      </div>
+      <div class="hud-right">
+        <span class="hud-timer" id="timer-display">⏱ 60</span>
+        <span class="hud-attempts" id="attempts-display">❤❤❤</span>
+        <button id="btn-hint" title="Подсказка">?</button>
+      </div>
+    </div>
+    <div id="wall">
+      <div id="scene">
+        <div class="wall-flicker"></div>
+        <div class="light-cone"></div>
+        <div class="vignette"></div>
+      </div>
+      <div id="doorphone">
+        <div id="phone-screen">
+          <div id="phone-display">____</div>
+          <div id="phone-found"></div>
+        </div>
+        <div id="phone-keypad">
+          <button class="key" data-val="1">1</button>
+          <button class="key" data-val="2">2</button>
+          <button class="key" data-val="3">3</button>
+          <button class="key" data-val="4">4</button>
+          <button class="key" data-val="5">5</button>
+          <button class="key" data-val="6">6</button>
+          <button class="key" data-val="7">7</button>
+          <button class="key" data-val="8">8</button>
+          <button class="key" data-val="9">9</button>
+          <button class="key key-clear" data-val="clear">C</button>
+          <button class="key" data-val="0">0</button>
+          <button class="key key-ok" data-val="ok">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="level-complete" class="hidden">
+    <div class="overlay-content">
+      <div class="complete-text">ОТКРЫТО!</div>
+      <div class="complete-sub">Код принят</div>
+      <button id="btn-next">СЛЕДУЮЩИЙ УРОВЕНЬ</button>
+    </div>
+  </div>
+
+  <div id="game-over" class="hidden">
+    <div class="overlay-content">
+      <div class="complete-text">ПОБЕДА!</div>
+      <div class="complete-sub">Все 100 домофонов открыты</div>
+      <button id="btn-restart">ЗАНОВО</button>
+    </div>
+  </div>
+
+  <div id="alarm-overlay" class="hidden">
+    <div class="overlay-content">
+      <div class="alarm-text">СИГНАЛИЗАЦИЯ!</div>
+      <div class="alarm-sub">Слишком много ошибок</div>
+      <div class="alarm-timer" id="alarm-countdown">5</div>
+    </div>
+  </div>
+
+  <div id="timeout-overlay" class="hidden">
+    <div class="overlay-content">
+      <div class="timeout-text">ВРЕМЯ ВЫШЛО!</div>
+      <div class="timeout-sub">Дверь не открыта</div>
+      <button id="btn-retry">ПОВТОРИТЬ</button>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
